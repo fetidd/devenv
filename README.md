@@ -8,7 +8,7 @@ uv, starship, mise, and the supporting dnf packages (ripgrep, bat, fzf, fd, eza,
 ## New machine
 
 ```
-curl -fsSL https://raw.githubusercontent.com/fetidd/devenv/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/fetidd/devenv/master/install.sh | bash
 ```
 
 Installs `git` + `chezmoi`, then `chezmoi init --apply` pulls this repo and runs the
