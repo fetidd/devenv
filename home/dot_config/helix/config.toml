@@ -1,0 +1,26 @@
+theme = "fleet_dark"
+
+[editor]
+true-color = true
+bufferline = "multiple"
+color-modes = true
+
+[editor.soft-wrap]
+enable = true
+
+[editor.cursor-shape]
+insert = "bar"
+
+[editor.indent-guides]
+render = true
+character = "⸽"
+skip-levels = 1
+
+# [keys.insert]
+# j = { k = "normal_mode" }
+
+[keys.normal]
+"ret" = "goto_word"
+
+[keys.normal."space"]
+o = "file_picker_in_current_buffer_directory"
