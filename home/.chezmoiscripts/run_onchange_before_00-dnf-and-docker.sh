@@ -36,7 +36,8 @@ if ! rpm -q docker-ce >/dev/null 2>&1; then
   fi
 fi
 
-if ! id -nG "$USER" | grep -qw docker; then
-  echo "==> Adding $USER to docker group (log out/in for it to take effect)"
-  sudo usermod -aG docker "$USER"
+CURRENT_USER="$(id -un)"
+if ! id -nG "$CURRENT_USER" | grep -qw docker; then
+  echo "==> Adding $CURRENT_USER to docker group (log out/in for it to take effect)"
+  sudo usermod -aG docker "$CURRENT_USER"
 fi
