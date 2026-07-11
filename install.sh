@@ -2,7 +2,7 @@
 # Bootstrap a brand new Fedora install from this dotfiles repo.
 #
 # Usage:
-#   curl -fsSL https://raw.githubusercontent.com/<github-user>/dotfiles/main/install.sh | bash
+#   curl -fsSL https://raw.githubusercontent.com/fetidd/devenv/main/install.sh | bash
 #
 # This only installs git + chezmoi, then hands off to chezmoi, which
 # applies dotfiles and runs the run_onchange_ scripts in .chezmoiscripts/
@@ -11,4 +11,4 @@ set -euo pipefail
 
 sudo dnf install -y git chezmoi
 
-chezmoi init --apply <github-user>/dotfiles
+chezmoi init --apply fetidd/devenv
