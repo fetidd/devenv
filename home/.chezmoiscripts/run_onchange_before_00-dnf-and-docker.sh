@@ -29,7 +29,11 @@ if ! rpm -q docker-ce >/dev/null 2>&1; then
   sudo dnf config-manager addrepo --from-repofile=https://download.docker.com/linux/fedora/docker-ce.repo
   echo "==> Installing Docker CE"
   sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-  sudo systemctl enable --now docker
+  if [ -d /run/systemd/system ]; then
+    sudo systemctl enable --now docker
+  else
+    echo "==> No systemd (container/minimal env) - skipping 'systemctl enable --now docker'"
+  fi
 fi
 
 if ! id -nG "$USER" | grep -qw docker; then
